@@ -26,8 +26,8 @@ namespace TaxSurveyAPI.Controllers
         {
             try
             {
-                int totalWeightage = 0;
-                int selectedWeightage = 0;
+                decimal totalWeightage = 0;
+                decimal selectedWeightage = 0;
                 foreach (var question in questions)
                 {
                     totalWeightage = totalWeightage + question.TotalWeightage;
@@ -53,7 +53,7 @@ namespace TaxSurveyAPI.Controllers
                             break;
                     }
                 }
-                int weightagePercent = (selectedWeightage / totalWeightage) * 100;
+                decimal weightagePercent = Math.Round((selectedWeightage / totalWeightage) * 100, 2);
                 var message = Request.CreateResponse(HttpStatusCode.OK, weightagePercent);
                 return message;
             }

@@ -17,7 +17,10 @@
         // function to process the form
         $scope.processForm = function () {
             //alert('awesome!');
-            questionsFactory.postAnswers($scope.questions);
+            questionsFactory.postAnswers($scope.questions).then(function (d) {
+                debugger;
+                console.log(d.data);
+            });
         };
     }
 })();

@@ -21,5 +21,10 @@ namespace TaxSurveyAPI.Controllers
         {
             return questionerFactory.GetQuestioner();
         }
+        public void Post([FromBody] IEnumerable<Question> questions)
+        {
+            
+        }
+
     }
 }

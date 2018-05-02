@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.14
+VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxSurvey", "TaxSurvey\TaxSurvey.csproj", "{12046339-8C6F-4155-A95F-17A3053A8E6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxSurveyAPI", "TaxSurveyAPI\TaxSurveyAPI.csproj", "{554E71A4-B0BB-40FB-807C-D6BEE32D264F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{12046339-8C6F-4155-A95F-17A3053A8E6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12046339-8C6F-4155-A95F-17A3053A8E6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12046339-8C6F-4155-A95F-17A3053A8E6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{554E71A4-B0BB-40FB-807C-D6BEE32D264F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{554E71A4-B0BB-40FB-807C-D6BEE32D264F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{554E71A4-B0BB-40FB-807C-D6BEE32D264F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{554E71A4-B0BB-40FB-807C-D6BEE32D264F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2F2247CE-280C-4CE3-947C-2069A2B389D6}
 	EndGlobalSection
 EndGlobal

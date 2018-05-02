@@ -1,19 +1,19 @@
-﻿<label>{{question.Text}}</label>
+﻿<label>{{question.QuestionText}}</label>
 <div ng-if="question.Type == 'radio'" class="form-group">
     <div ng-repeat="option in question.Options" class="radio">
         <label>
-            <input type="radio" name="{{option.Text}}" ng-model="option.Selected" ng-value="option.Value">
+            <input type="radio" name="radio" ng-model="option.IsSelected" ng-value="option.IsSelected">
             {{option.Text}}
         </label>
     </div>
 </div>
 <div ng-if="question.Type == 'text'" class="form-group">
-    <input type="text" class="form-control" name="name" ng-model="question.Answer">
+    <input type="text" class="form-control" name="name" ng-model="question.Text">
 </div>
 <div ng-if="question.Type == 'checkbox'" class="form-group">
     <div ng-repeat="option in question.Options" class="radio">
         <label>
-            <input type="checkbox" id="chk_{{$index}}" ng-model="option.Selected" ng-value="option.Value">
+            <input type="checkbox" id="chk_{{$index}}" ng-model="option.IsSelected" ng-value="option.IsSelected">
             {{option.Text}}
         </label>
     </div>
@@ -21,9 +21,9 @@
 
 <div class="form-group row">
     <div class="col-xs-6 col-xs-offset-3">
-        <a ng-if="question.Id < totalQuestions.length" ng-click="submitAnswer()" class="btn btn-block btn-info">
+        <a ng-if="question.QuestionId < totalQuestions.length" ng-click="submitAnswer()" class="btn btn-block btn-info">
             Next <span class="glyphicon glyphicon-circle-arrow-right"></span>
         </a>
-        <a ng-if="question.Id == totalQuestions.length" ng-click="submitAnswer()" class="btn btn-block btn-danger">Submit</a>
+        <a ng-if="question.QuestionId == totalQuestions.length" ng-click="submitAnswer()" class="btn btn-block btn-danger">Submit</a>
     </div>
 </div>

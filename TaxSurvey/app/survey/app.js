@@ -13,9 +13,17 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
             .state('form', {
                 url: '/form',
                 templateUrl: 'app/survey/form.html',
-                controller: 'formController'
+                controller: 'formController',
+                resolve: {
+                    questions: function (questionsFactory, $q) {
+                        var defObj = $q.defer();
+                        return questionsFactory.getAllQuestions().success(function (d) {
+                            defObj.resolve(d);
+                        });
+                        return defObj.promise;
+                    }
+                }
             })
-
             // nested states 
             // each of these sections will have their own view
             // url will be nested (/form/profile)

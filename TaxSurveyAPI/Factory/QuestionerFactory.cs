@@ -25,22 +25,23 @@ namespace TaxSurveyAPI.Factory
 
             List<Question> questionslist = new List<Question>
             {
-                GetQuestion(1, "How many states are you obligated to collect sales tax in?", "checkbox", questionOptions1),
-                GetQuestion(2, "Do you collect sales tax in Louisiana?", "radio", questionOptions2),
-                GetQuestion(3, "Do you sell products online (via the internet)?", "radio", questionOptions2)
+                GetQuestion(1, "How many states are you obligated to collect sales tax in?", QuestionType.checkbox.ToString(), questionOptions1, GetTotalWeightage(QuestionType.checkbox,questionOptions1)),
+                GetQuestion(2, "Do you collect sales tax in Louisiana?", QuestionType.radio.ToString(), questionOptions2, GetTotalWeightage(QuestionType.radio,questionOptions2)),
+                GetQuestion(3, "Do you sell products online (via the internet)?", QuestionType.radio.ToString(), questionOptions2,GetTotalWeightage(QuestionType.radio,questionOptions2))
             };
 
             return questionslist;
         }
 
-        Question GetQuestion(int questionId, string questionText, string type, List<QuestionOption> options)
+        Question GetQuestion(int questionId, string questionText, string type, List<QuestionOption> options, int totalWeightage)
         {
             Question questionObject = new Question()
             {
                 QuestionId = questionId,
                 QuestionText = questionText,
                 Type = type,
-                Options = options
+                Options = options,
+                TotalWeightage = totalWeightage
             };
             return questionObject;
         }
@@ -54,6 +55,26 @@ namespace TaxSurveyAPI.Factory
                 Weightage = weightage
             };
             return obj;
+        }
+        int GetTotalWeightage(QuestionType questionType, List<QuestionOption> questionOptions)
+        {
+            int totalWeightage = 0;
+            switch (questionType)
+            {
+                case QuestionType.checkbox:
+                case QuestionType.radio:
+                    foreach (var questionOption in questionOptions)
+                    {
+                        totalWeightage = totalWeightage + questionOption.Weightage;
+                    }
+                    break;
+                case QuestionType.text:
+                    totalWeightage = 10;
+                    break;
+                default:
+                    break;
+            }
+            return totalWeightage;
         }
 
     }

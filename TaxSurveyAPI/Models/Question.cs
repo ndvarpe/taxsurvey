@@ -10,7 +10,7 @@ namespace TaxSurveyAPI.Models
         public int QuestionId { get; set; }
         public string QuestionText { get; set; }
         public string Type { get; set; }
-        public int TotalWeightageSelected { get; set; }
+        public int TotalWeightage { get; set; }
         public int SelectedOption { get; set; }
         public List<QuestionOption> Options { get; set; }
     }

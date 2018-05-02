@@ -2,7 +2,7 @@
 <div ng-if="question.Type == 'radio'" class="form-group">
     <div ng-repeat="option in question.Options" class="radio">
         <label>
-            <input type="radio" name="{{option.Text}}" ng-model="question.Answer" ng-value="option.Value">
+            <input type="radio" name="{{option.Text}}" ng-model="option.Selected" ng-value="option.Value">
             {{option.Text}}
         </label>
     </div>
@@ -21,8 +21,9 @@
 
 <div class="form-group row">
     <div class="col-xs-6 col-xs-offset-3">
-        <a ui-sref="form.question({ questionId : question.Id + 1 })" class="btn btn-block btn-info">
-            Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
+        <a ng-if="question.Id < totalQuestions.length" ng-click="submitAnswer()" class="btn btn-block btn-info">
+            Next <span class="glyphicon glyphicon-circle-arrow-right"></span>
         </a>
+        <a ng-if="question.Id == totalQuestions.length" ng-click="submitAnswer()" class="btn btn-block btn-danger">Submit</a>
     </div>
 </div>

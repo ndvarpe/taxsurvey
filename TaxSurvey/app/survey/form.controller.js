@@ -16,7 +16,8 @@
         console.log($scope.questions);
         // function to process the form
         $scope.processForm = function () {
-            alert('awesome!');
+            //alert('awesome!');
+            questionsFactory.postAnswers($scope.questions);
         };
     }
 })();

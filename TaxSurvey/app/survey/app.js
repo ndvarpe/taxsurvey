@@ -56,10 +56,9 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
         // send users to the form page 
         //$urlRouterProvider.otherwise('/form/profile');
 
-        $urlRouterProvider.otherwise(function ($injector, $location) {
+        $urlRouterProvider.otherwise(function ($injector, $location, $stateParams) {
             var state = $injector.get('$state');
-            var queryParam = $location.search() ? $location.search() : 1;
-            state.go("form.question", queryParam); // here we get { query: ... }
+            state.go("form.question", {questionId : 1}); // here we get { query: ... }
             return $location.path();
         });
     })

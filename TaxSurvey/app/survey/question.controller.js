@@ -11,7 +11,16 @@
       $scope.submitAnswer = function () {
           console.log($scope.question);
           switch ($scope.question.Type) {
-              case 'radio':
+              case 'radio': if ($scope.question.SelectedOption != 0) {
+                                      if ($scope.question.QuestionId == $scope.totalQuestions.length) {
+                                          console.log($scope.$parent.questions);
+                                          $scope.$parent.processForm();
+                                      }
+                                      else {
+                                          $state.go('form.question', { questionId: $scope.question.QuestionId + 1 });
+                                      }
+                             }
+                              break;
               case 'checkbox':
                               var selectedAnswers = $scope.question.Options.filter(function (opt) { return opt.IsSelected == true });
                               if (selectedAnswers && selectedAnswers.length > 0) {

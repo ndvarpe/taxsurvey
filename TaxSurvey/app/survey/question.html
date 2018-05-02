@@ -2,7 +2,7 @@
 <div ng-if="question.Type == 'radio'" class="form-group">
     <div ng-repeat="option in question.Options" class="radio">
         <label>
-            <input type="radio" name="radio" ng-model="option.IsSelected" ng-value="option.IsSelected">
+            <input type="radio" name="radio" ng-model="question.SelectedOption" ng-value="option.Value">
             {{option.Text}}
         </label>
     </div>
@@ -13,7 +13,7 @@
 <div ng-if="question.Type == 'checkbox'" class="form-group">
     <div ng-repeat="option in question.Options" class="radio">
         <label>
-            <input type="checkbox" id="chk_{{$index}}" ng-model="option.IsSelected" ng-value="option.IsSelected">
+            <input type="checkbox" id="chk_{{$index}}" ng-model="option.IsSelected">
             {{option.Text}}
         </label>
     </div>

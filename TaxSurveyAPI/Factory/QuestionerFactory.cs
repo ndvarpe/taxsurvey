@@ -25,7 +25,7 @@ namespace TaxSurveyAPI.Factory
 
             List<Question> questionslist = new List<Question>
             {
-                GetQuestion(1, "How many states are you obligated to collect sales tax in?", "radio", questionOptions1),
+                GetQuestion(1, "How many states are you obligated to collect sales tax in?", "checkbox", questionOptions1),
                 GetQuestion(2, "Do you collect sales tax in Louisiana?", "radio", questionOptions2),
                 GetQuestion(3, "Do you sell products online (via the internet)?", "radio", questionOptions2)
             };

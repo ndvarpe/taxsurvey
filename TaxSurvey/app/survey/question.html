@@ -1,0 +1,28 @@
+﻿<label>{{question.Text}}</label>
+<div ng-if="question.Type == 'radio'" class="form-group">
+    <div ng-repeat="option in question.Options" class="radio">
+        <label>
+            <input type="radio" name="{{option.Text}}" ng-model="question.Answer" ng-value="option.Value">
+            {{option.Text}}
+        </label>
+    </div>
+</div>
+<div ng-if="question.Type == 'text'" class="form-group">
+    <input type="text" class="form-control" name="name" ng-model="question.Answer">
+</div>
+<div ng-if="question.Type == 'checkbox'" class="form-group">
+    <div ng-repeat="option in question.Options" class="radio">
+        <label>
+            <input type="checkbox" id="chk_{{$index}}" ng-model="option.Selected" ng-value="option.Value">
+            {{option.Text}}
+        </label>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-6 col-xs-offset-3">
+        <a ui-sref="form.question({ questionId : question.Id + 1 })" class="btn btn-block btn-info">
+            Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
+        </a>
+    </div>
+</div>

@@ -38,15 +38,22 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
             })
 
             .state('form.question', {
-            url: '/question',
-            templateUrl: 'app/survey/form-interests.html',
+            url: '/question/:questionId',
+            templateUrl: 'app/survey/question.html',
             controller: 'questionController'
             })
 
 
         // catch all route
         // send users to the form page 
-        $urlRouterProvider.otherwise('/form/profile');
+        //$urlRouterProvider.otherwise('/form/profile');
+
+        $urlRouterProvider.otherwise(function ($injector, $location) {
+            var state = $injector.get('$state');
+            var queryParam = $location.search() ? $location.search() : 1;
+            state.go("form.question", queryParam); // here we get { query: ... }
+            return $location.path();
+        });
     })
 
     // our controller for the form

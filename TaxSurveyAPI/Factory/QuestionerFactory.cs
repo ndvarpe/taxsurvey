@@ -12,69 +12,69 @@ namespace TaxSurveyAPI.Factory
         {
             List<QuestionOption> questionOptions1 = new List<QuestionOption>
             {
-                GetQuestionOptions("Yes", 1, false,20,3),
-                GetQuestionOptions("No", 2, false,0,2),
+                GetQuestionOptions("Yes", 1, false, 3, GetFactorWeightage(40, 20)),
+                GetQuestionOptions("No", 2, false, 2, GetFactorWeightage(30))
             };
             List<QuestionOption> questionOptions2 = new List<QuestionOption>
             {
-                GetQuestionOptions("Albama", 1, false,30,4),
-                GetQuestionOptions("California", 2, false,30,5),
-                GetQuestionOptions("Michigan", 3, false,10,5)
+                GetQuestionOptions("Albama", 1, false, 4, GetFactorWeightage(50,30, 10, 20, 15, 25)),
+                GetQuestionOptions("California", 2, false, 5, GetFactorWeightage(30,20, 10, 20, 15, 25)),
+                GetQuestionOptions("Michigan", 3, false, 5, GetFactorWeightage(20,20, 15, 25))
             };
             List<QuestionOption> questionOptions2_Chk = new List<QuestionOption>
             {
-                GetQuestionOptions("Albama", 1, false,30,5),
-                GetQuestionOptions("California", 2, false,30,5),
-                GetQuestionOptions("Michigan", 3, false,10,5)
+                GetQuestionOptions("Albama", 1, false,5, GetFactorWeightage(50,30, 10, 20, 15, 25)),
+                GetQuestionOptions("California", 2, false,5, GetFactorWeightage(30,20, 10, 20, 15, 25)),
+                GetQuestionOptions("Michigan", 3, false,5, GetFactorWeightage(20,20, 15, 25))
             };
             List<QuestionOption> questionOptions3 = new List<QuestionOption>
             {
-                GetQuestionOptions("Yes", 1, false,0,5),
-                GetQuestionOptions("No", 2, false,30,5)
+                GetQuestionOptions("Yes", 1, false,6, GetFactorWeightage(0,0,0,0,0,0,0)),
+                GetQuestionOptions("No", 2, false,5, GetFactorWeightage(30,20, 10, 20, 15, 25))
             };
             List<QuestionOption> questionOptions4 = new List<QuestionOption>
             {
-                GetQuestionOptions("Yes", 1, false,0,6),
-                GetQuestionOptions("No", 2, false,30,6)
+                GetQuestionOptions("Yes", 1, false,6, GetFactorWeightage(20,20,25)),
+                GetQuestionOptions("No", 2, false,6, GetFactorWeightage(30,20, 10, 20, 15, 25))
             };
             List<QuestionOption> questionOptions5 = new List<QuestionOption>
             {
-                GetQuestionOptions("Yes", 1, false,10,7),
-                GetQuestionOptions("No", 2, false,60,7)
+                GetQuestionOptions("Yes", 1, false,7, GetFactorWeightage(30,20, 10, 20, 15, 25)),
+                GetQuestionOptions("No", 2, false,7, GetFactorWeightage(78,65, 40, 70, 45, 35, 45))
             };
             List<QuestionOption> questionOptions6 = new List<QuestionOption>
             {
-                GetQuestionOptions("Yes", 1, false,10,8),
-                GetQuestionOptions("No", 2, false,60,8)
+                GetQuestionOptions("Yes", 1, false,8, GetFactorWeightage(48,35, 45)),
+                GetQuestionOptions("No", 2, false,8, GetFactorWeightage(35, 40))
             };
             List<QuestionOption> questionOptions7 = new List<QuestionOption>
             {
-                GetQuestionOptions("Yes", 1, false,20,9),
-                GetQuestionOptions("No", 2, false,0,9),
-                GetQuestionOptions("Both, other than home ruled also", 3, false,30,9)
+                GetQuestionOptions("Yes", 1, false,9, GetFactorWeightage(48,25, 45)),
+                GetQuestionOptions("No", 2, false,9, GetFactorWeightage(30,20)),
+                GetQuestionOptions("Both, other than home ruled also", 3, false,9, GetFactorWeightage(49,30, 10, 20, 25, 35, 25))
             };
             List<QuestionOption> questionOptions8 = new List<QuestionOption>
             {
-                GetQuestionOptions("1658-ATTALIA", 1, false,10,10),
-                GetQuestionOptions("1718-BIRMINGHAM", 2, false,10,10),
-                GetQuestionOptions("9752-BAKERHILL", 3, false,20,10),
-                GetQuestionOptions("9643-BEAR CREEK", 4, false,20,10),
-                GetQuestionOptions("2089-CULLMAN", 5, false,10,10)
+                GetQuestionOptions("1658-ATTALIA", 1, false,10, GetFactorWeightage(30,30, 43,26,30)),
+                GetQuestionOptions("1718-BIRMINGHAM", 2, false,10, GetFactorWeightage(30,30, 43,26,30)),
+                GetQuestionOptions("9752-BAKERHILL", 3, false,10, GetFactorWeightage(50,70, 43,26,30)),
+                GetQuestionOptions("9643-BEAR CREEK", 4, false,10, GetFactorWeightage(70,60, 43,26,30)),
+                GetQuestionOptions("2089-CULLMAN", 5, false,10,GetFactorWeightage(30,30, 43,26,30))
             };
             List<QuestionOption> questionOptions9 = new List<QuestionOption>
             {
-                GetQuestionOptions("Yes", 1, false,20,11),
-                GetQuestionOptions("No", 2, false,0,11)
+                GetQuestionOptions("Yes", 1, false,11, GetFactorWeightage(55,65, 43,26,30)),
+                GetQuestionOptions("No", 2, false,11, GetFactorWeightage(30,30, 43,26,30))
             };
             List<QuestionOption> questionOptions10 = new List<QuestionOption>
             {
-                GetQuestionOptions("Yes", 1, false,10,12),
-                GetQuestionOptions("No", 2, false,0,12)
+                GetQuestionOptions("Yes", 1, false,12, GetFactorWeightage(60,70, 43,26,30)),
+                GetQuestionOptions("No", 2, false,12, GetFactorWeightage(0,0, 20,20,30))
             };
             List<QuestionOption> questionOptions11 = new List<QuestionOption>
             {
-                GetQuestionOptions("Yes", 1, false,0,-1),
-                GetQuestionOptions("No", 2, false,20,-1)
+                GetQuestionOptions("Yes", 1, false,-1, GetFactorWeightage(20,20, 23,26,20)),
+                GetQuestionOptions("No", 2, false,-1, GetFactorWeightage(50,60, 43,26,30))
             };
 
             List<Question> questionslist = new List<Question>
@@ -108,15 +108,30 @@ namespace TaxSurveyAPI.Factory
             };
             return questionObject;
         }
-        QuestionOption GetQuestionOptions(string text, int value, bool IsSelected, int weightage, int nextQuestionId)
+        QuestionOption GetQuestionOptions(string text, int value, bool IsSelected, int nextQuestionId, FactorWeightage factorWeightage)
         {
             QuestionOption obj = new QuestionOption()
             {
                 Text = text,
                 Value = value,
                 IsSelected = IsSelected,
-                Weightage = weightage,
-                NextQuestionId = nextQuestionId
+                NextQuestionId = nextQuestionId,
+                FactorWeightage = factorWeightage
+            };
+            return obj;
+        }
+
+        FactorWeightage GetFactorWeightage(int time=10, int money = 10, int other = 10, int operational = 10, int burden = 10, int costOfPF = 10, int pshycological = 10)
+        {
+            FactorWeightage obj = new FactorWeightage()
+            {
+                Time = time,
+                Money = money,
+                Other = other,
+                Operational = operational,
+                Burden = burden,
+                CostOfPF = costOfPF,
+                Pshycological = pshycological
             };
             return obj;
         }
@@ -129,7 +144,7 @@ namespace TaxSurveyAPI.Factory
                 case QuestionType.radio:
                     foreach (var questionOption in questionOptions)
                     {
-                        totalWeightage = totalWeightage + questionOption.Weightage;
+                        //totalWeightage = totalWeightage + questionOption.FactorWeightage;
                     }
                     break;
                 case QuestionType.text:

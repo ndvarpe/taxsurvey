@@ -8,7 +8,7 @@
           
           <!-- the links to our nested states using relative paths -->
           <!-- add the active class if the state matches our ui-sref -->
-          <div id="status-buttons" class="text-center">
+          <div id="status-buttons" class="text-center" ng-hide="hideProgress">
               <a ng-repeat="question in questions" ui-sref-active="active" class="disabled" ui-sref=".question({questionId : question.QuestionId})"> 
                   <span>{{question.QuestionId}}</span>
               </a>

@@ -46,15 +46,17 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
             })
 
             .state('form.question', {
-            url: '/question/:questionId',
-            templateUrl: 'app/survey/question.html',
-            controller: 'questionController'
+                url: '/question/:questionId',
+                templateUrl: 'app/survey/question.html',
+                controller: 'questionController'
             })
 
         .state('form.surveyChart', {
             url: '/surveyChart',
+            
             templateUrl: 'app/survey/surveyChart.html',
-            controller: 'surveyChartController'
+            controller: 'surveyChartController as ctrl',
+            params: { data: null }
         })
 
 
@@ -64,10 +66,10 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
 
         $urlRouterProvider.otherwise(function ($injector, $location, $stateParams) {
             var state = $injector.get('$state');
-            state.go("form.question", {questionId : 1}); // here we get { query: ... }
+            state.go("form.question", { questionId: 1 }); // here we get { query: ... }
             return $location.path();
         });
     })
 
-    // our controller for the form
-    // =============================================================================
+// our controller for the form
+// =============================================================================

@@ -6,24 +6,26 @@
 		.controller('surveyChartController', ['$scope', 'questionsFactory', '$state', '$stateParams', surveyChartController]);
 
     function surveyChartController($scope, questionsFactory, $state, $stateParams) {
+        var ctrl = this;
+        var data = $stateParams.data;
+        
+        var dataProvider = [];
+
+        $('#pieChart').hide();
+
+        for(var key in data.barChart){
+            dataProvider.push({
+                "country": key,
+                "visits": data.barChart[key],
+                "color": "#FF0F00"
+            });
+        }
 
         var columnChart = AmCharts.makeChart("columnChart", {
             "theme": "light",
             "type": "serial",
             "startDuration": 2,
-            "dataProvider": [{
-                "country": "Compliance",
-                "visits": 20,
-                "color": "#FF0F00"
-            }, {
-                "country": "Efficiency",
-                "visits": 40,
-                "color": "#FF6600"
-            }, {
-                "country": "Psychological",
-                "visits": 80,
-                "color": "#FF9E01"
-            }],
+            "dataProvider": dataProvider,
             "valueAxes": [{
                 "position": "left",
                 "title": "Risk"
@@ -58,19 +60,49 @@
         });
 
         function updatePieChart(event) {
+            var piedataProvider = [];
+            $('#pieChart').show();
+            if (event.item.category == 'Compliance') {
 
-            //alert(event.item.category);
-            pieChart.dataProvider = [{
-                "country": "Time",
-                "value": 10
-            }, {
-                "country": "Money",
-                "value": 30
-            }, {
-                "country": "Others",
-                "value": 70
-            }];
-            pieChart.validateData();
+                piedataProvider.push({
+                    "country": "Time",
+                    "value": data.pieChart['Time']
+                });
+                piedataProvider.push({
+                    "country": "Money",
+                    "value": data.pieChart['Money']
+                });
+                piedataProvider.push({
+                    "country": "Other",
+                    "value": data.pieChart['Other']
+                });
+            }
+            else if (event.item.category == 'Efficiency') {
+
+                piedataProvider.push({
+                    "country": "Operational",
+                    "value": data.pieChart['Operational']
+                });
+                piedataProvider.push({
+                    "country": "Burden",
+                    "value": data.pieChart['Burden']
+                });
+                piedataProvider.push({
+                    "country": "Other",
+                    "value": data.pieChart['CostOfPF']
+                });
+            } else {
+                piedataProvider.push({
+                    "country": "Psychological",
+                    "value": data.barChart['Psychological']
+                });
+                piedataProvider.push({
+                    "country": "Other",
+                    "value": data.pieChart['Other']
+                });
+            }
+            pieChart.dataProvider = piedataProvider;
+           pieChart.validateData();
         }
 
         var pieChart = AmCharts.makeChart("pieChart", {

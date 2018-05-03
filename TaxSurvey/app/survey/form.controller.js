@@ -3,9 +3,9 @@
 
     angular
         .module('formApp')
-        .controller('formController', ['$scope', 'questionsFactory', 'questions', formController]);
+        .controller('formController', ['$scope', 'questionsFactory', 'questions', '$state', formController]);
 
-    function formController($scope, questionsFactory, questions ) {
+    function formController($scope, questionsFactory, questions, $state) {
         // console.log($scope);
         // we will store all of our form data in this object
         $scope.formData = {};
@@ -18,8 +18,9 @@
         $scope.processForm = function () {
             //alert('awesome!');
             questionsFactory.postAnswers($scope.questions).then(function (d) {
-                debugger;
+                $state.go('form.surveyChart', { data: d.data });
                 console.log(d.data);
+                $scope.hideProgress = true;
             });
         };
     }

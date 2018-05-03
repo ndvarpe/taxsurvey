@@ -39,7 +39,7 @@ namespace TaxSurveyAPI.Controllers
                             var questionOptions = question.Options.Where(o => o.IsSelected == true);
                             foreach (var item in questionOptions)
                             {
-                                totalWeightage = totalWeightage + item.Weightage;
+                                selectedWeightage = selectedWeightage + item.Weightage;
                             }
                             break;
                         case QuestionType.radio:

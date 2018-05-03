@@ -43,9 +43,9 @@ namespace TaxSurveyAPI.Factory
             {
                 GetQuestion(1, "How many states are you obligated to collect sales tax in?", QuestionType.checkbox.ToString(), questionOptions1, GetTotalWeightage(QuestionType.checkbox,questionOptions1)),
                 GetQuestion(2, "Do you collect sales tax in Home-Ruled State like Louisiana?", QuestionType.radio.ToString(), questionOptions2, GetTotalWeightage(QuestionType.radio,questionOptions2)),
-                GetQuestion(3, "Do you sell products online (via the internet)?", QuestionType.radio.ToString(), questionOptions2,GetTotalWeightage(QuestionType.radio,questionOptions3)),
-                GetQuestion(4, "Have you been audited?", QuestionType.radio.ToString(), questionOptions2,GetTotalWeightage(QuestionType.radio,questionOptions4)),
-                GetQuestion(5, "Do you have a reserve for sales tax fines?", QuestionType.radio.ToString(), questionOptions2,GetTotalWeightage(QuestionType.radio,questionOptions5))
+                GetQuestion(3, "Do you sell products online (via the internet)?", QuestionType.radio.ToString(), questionOptions3,GetTotalWeightage(QuestionType.radio,questionOptions3)),
+                GetQuestion(4, "Have you been audited?", QuestionType.radio.ToString(), questionOptions4,GetTotalWeightage(QuestionType.radio,questionOptions4)),
+                GetQuestion(5, "Do you have a reserve for sales tax fines?", QuestionType.radio.ToString(), questionOptions5,GetTotalWeightage(QuestionType.radio,questionOptions5))
             };
 
             return questionslist;

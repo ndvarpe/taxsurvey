@@ -31,5 +31,8 @@
             Next <span class="glyphicon glyphicon-circle-arrow-right"></span>
         </a>
         <a ng-if="question.QuestionId == totalQuestions.length" ng-click="submitAnswer()" class="btn btn-block btn-danger">Submit</a>
+        <a ng-if="question.QuestionId <= totalQuestions.length && question.QuestionId != 1" ng-click="previousQuestion()" class="btn btn-block btn-info">
+            <span class="glyphicon glyphicon-circle-arrow-left"></span> Previous
+        </a>
     </div>
 </div>

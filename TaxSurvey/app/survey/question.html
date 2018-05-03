@@ -5,7 +5,7 @@
         <label for="radio_{{$index}}" class="option-text">
             {{option.Text}}
         </label>
-        <span class="pull-right" ng-show="question.SelectedOption == option.Value"><i class="fa fa-check-circle" aria-hidden="true" style="color:green"></i></span>
+        <span class="pull-right" ng-show="question.SelectedOption == option.Value"><i class="fa fa-dot-circle-o fa-lg" aria-hidden="true" style="color:green"></i></span>
     </div>
 </div>
 <div ng-if="question.Type == 'text'" class="form-group">
@@ -18,7 +18,7 @@
         <label for="chk_{{$index}}" class="option-text">
             {{option.Text}}
         </label>
-        <span class="pull-right" ng-show="option.IsSelected"><i class="fa fa-check-circle" aria-hidden="true" style="color:green"></i></span>
+        <span class="pull-right" ng-show="option.IsSelected"><i class="fa fa-check-circle fa-lg" aria-hidden="true" style="color:green"></i></span>
     </div>
     <!--<div ng-repeat="option in question.Options" class="radio">
         <label>

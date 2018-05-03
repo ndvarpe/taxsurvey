@@ -12,22 +12,40 @@ namespace TaxSurveyAPI.Factory
         {
             List<QuestionOption> questionOptions1 = new List<QuestionOption>
             {
-                GetQuestionOptions("0 to 5", 1, false,5),
-                GetQuestionOptions("5 to 15", 2, false,10),
-                GetQuestionOptions("15 to 30", 3, false,15),
-                GetQuestionOptions("30 to 50", 4, false,20)
+                GetQuestionOptions("0 to 5", 1, false,5,2),
+                GetQuestionOptions("5 to 15", 2, false,10,2),
+                GetQuestionOptions("15 to 30", 3, false,15,2),
+                GetQuestionOptions("30 to 50", 4, false,2,2)
             };
             List<QuestionOption> questionOptions2 = new List<QuestionOption>
             {
-                GetQuestionOptions("Yes", 1, false,10),
-                GetQuestionOptions("No", 2, false,0)
+                GetQuestionOptions("Yes", 1, false,10,3),
+                GetQuestionOptions("No", 2, false,0,3)
             };
+            List<QuestionOption> questionOptions3 = new List<QuestionOption>
+            {
+                GetQuestionOptions("Yes", 1, false,10,4),
+                GetQuestionOptions("No", 2, false,0,5)
+            };
+            List<QuestionOption> questionOptions4 = new List<QuestionOption>
+            {
+                GetQuestionOptions("Yes", 1, false,10,5),
+                GetQuestionOptions("No", 2, false,0,5)
+            };
+            List<QuestionOption> questionOptions5 = new List<QuestionOption>
+            {
+                GetQuestionOptions("Yes", 1, false,10,-1),
+                GetQuestionOptions("No", 2, false,0,-1)
+            };
+
 
             List<Question> questionslist = new List<Question>
             {
                 GetQuestion(1, "How many states are you obligated to collect sales tax in?", QuestionType.checkbox.ToString(), questionOptions1, GetTotalWeightage(QuestionType.checkbox,questionOptions1)),
                 GetQuestion(2, "Do you collect sales tax in Home-Ruled State like Louisiana?", QuestionType.radio.ToString(), questionOptions2, GetTotalWeightage(QuestionType.radio,questionOptions2)),
-                GetQuestion(3, "Do you sell products online (via the internet)?", QuestionType.radio.ToString(), questionOptions2,GetTotalWeightage(QuestionType.radio,questionOptions2))
+                GetQuestion(3, "Do you sell products online (via the internet)?", QuestionType.radio.ToString(), questionOptions2,GetTotalWeightage(QuestionType.radio,questionOptions3)),
+                GetQuestion(4, "Have you been audited?", QuestionType.radio.ToString(), questionOptions2,GetTotalWeightage(QuestionType.radio,questionOptions4)),
+                GetQuestion(5, "Do you have a reserve for sales tax fines?", QuestionType.radio.ToString(), questionOptions2,GetTotalWeightage(QuestionType.radio,questionOptions5))
             };
 
             return questionslist;
@@ -45,14 +63,15 @@ namespace TaxSurveyAPI.Factory
             };
             return questionObject;
         }
-        QuestionOption GetQuestionOptions(string text, int value, bool IsSelected, int weightage)
+        QuestionOption GetQuestionOptions(string text, int value, bool IsSelected, int weightage, int nextQuestionId)
         {
             QuestionOption obj = new QuestionOption()
             {
                 Text = text,
                 Value = value,
                 IsSelected = IsSelected,
-                Weightage = weightage
+                Weightage = weightage,
+                NextQuestionId = nextQuestionId
             };
             return obj;
         }

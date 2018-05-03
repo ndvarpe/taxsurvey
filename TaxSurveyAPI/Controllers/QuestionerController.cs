@@ -26,6 +26,7 @@ namespace TaxSurveyAPI.Controllers
         {
             try
             {
+                questions = questions.Where(q => q.IsAnswered == true).ToList();
                 decimal totalWeightage = 0;
                 decimal selectedWeightage = 0;
                 foreach (var question in questions)

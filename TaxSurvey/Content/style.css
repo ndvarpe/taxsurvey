@@ -82,3 +82,17 @@ body {
 #signup-form {
     background-color: #40b2a1;
 }
+.green-border {
+    border-color: #5DD81C !important;
+    background-color: #5DD81C;
+}
+
+.answer-option {
+    border: solid 2px gray;
+    padding: 10px;
+    margin: 10px;
+}
+
+input[type=radio], input[type=checkbox] {
+    opacity: 0 !important;
+}

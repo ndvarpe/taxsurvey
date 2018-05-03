@@ -16,16 +16,29 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
     
-
+    
     <!-- JS -->
     <!-- load angular, nganimate, and ui-router -->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.min.js"></script>
+
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+    <script src="https://www.amcharts.com/lib/3/pie.js"></script>
+
+
     <script src="@Url.Content("~/app/survey/app.js")"></script>
     <script src="@Url.Content("~/app/survey/questions.factory.js")"></script>
     <script src="@Url.Content("~/app/survey/form.controller.js")"></script>
     <script src="@Url.Content("~/app/survey/question.controller.js")"></script>
+    <script src="@Url.Content("~/app/survey/surveyChart.controller.js")"></script>
+
+
+    
     <link rel="shortcut icon" href="favicon.ico">
 </body>
 </html>

@@ -162,6 +162,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\survey\app.js" />
+    <Content Include="app\survey\surveyChart.html" />
     <Content Include="app\survey\form-interests.html" />
     <Content Include="app\survey\form-payment.html" />
     <Content Include="app\survey\form-profile.html" />
@@ -177,13 +178,28 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\angular-fusioncharts.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="app\survey\questions.factory.js" />
+    <Content Include="app\survey\surveyChart.controller.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Chart\fusioncharts.theme.carbon.js" />
+    <Content Include="Scripts\Chart\fusioncharts.theme.fint.js" />
+    <Content Include="Scripts\Chart\fusioncharts.theme.ocean.js" />
+    <Content Include="Scripts\Chart\fusioncharts.theme.zune.js" />
+    <Content Include="Scripts\fusioncharts.charts.js" />
+    <Content Include="Scripts\fusioncharts.gantt.js" />
+    <Content Include="Scripts\fusioncharts.js" />
+    <Content Include="Scripts\fusioncharts.maps.js" />
+    <Content Include="Scripts\fusioncharts.powercharts.js" />
+    <Content Include="Scripts\fusioncharts.ssgrid.js" />
+    <Content Include="Scripts\fusioncharts.treemap.js" />
+    <Content Include="Scripts\fusioncharts.widgets.js" />
+    <Content Include="Scripts\fusioncharts.zoomscatter.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />

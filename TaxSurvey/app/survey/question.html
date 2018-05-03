@@ -2,7 +2,7 @@
 <div ng-if="question.Type == 'radio'" class="form-group">
     <div ng-repeat="option in question.Options" class="answer-option" ng-class="{'green-border': question.SelectedOption == option.Value }">
         <input type="radio" name="radio" id="radio_{{$index}}" ng-model="question.SelectedOption" ng-value="option.Value">
-        <label for="radio_{{$index}}">
+        <label for="radio_{{$index}}" class="option-text">
             {{option.Text}}
         </label>
         <span class="pull-right" ng-show="question.SelectedOption == option.Value"><i class="fa fa-dot-circle-o fa-lg" aria-hidden="true" style="color:green"></i></span>
@@ -15,7 +15,7 @@
 
     <div ng-repeat="option in question.Options" class="answer-option" ng-class="{'green-border': option.IsSelected }">
         <input id="chk_{{$index}}" type="checkbox" ng-model="option.IsSelected">
-        <label for="chk_{{$index}}">
+        <label for="chk_{{$index}}" class="option-text">
             {{option.Text}}
         </label>
         <span class="pull-right" ng-show="option.IsSelected"><i class="fa fa-check-circle fa-lg" aria-hidden="true" style="color:green"></i></span>

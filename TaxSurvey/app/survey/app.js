@@ -51,6 +51,12 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
             controller: 'questionController'
             })
 
+        .state('form.surveyChart', {
+            url: '/surveyChart',
+            templateUrl: 'app/survey/surveyChart.html',
+            controller: 'surveyChartController'
+        })
+
 
         // catch all route
         // send users to the form page 

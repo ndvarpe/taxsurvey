@@ -13,6 +13,8 @@ namespace TaxSurveyAPI.Models
         public int TotalWeightage { get; set; }
         public int SelectedOption { get; set; }
         public List<QuestionOption> Options { get; set; }
+        public bool IsAnswered { get; set; }
+        public int PrevQuestionId { get; set; }
     }
     public class QuestionOption
     {
@@ -20,5 +22,6 @@ namespace TaxSurveyAPI.Models
         public int Value { get; set; }
         public bool IsSelected { get; set; }
         public int Weightage { get; set; }
+        public int NextQuestionId { get; set; }
     }
 }

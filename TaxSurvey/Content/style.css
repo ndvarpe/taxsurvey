@@ -82,6 +82,10 @@ body {
 #signup-form {
     background-color: #40b2a1;
 }
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+}
 .green-border {
     border-color: #5DD81C !important;
     background-color: #5DD81C;

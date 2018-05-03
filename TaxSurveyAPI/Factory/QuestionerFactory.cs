@@ -84,10 +84,10 @@ namespace TaxSurveyAPI.Factory
                 GetQuestion(3, "In which state are you obligated to Collect sales tax?", QuestionType.checkbox.ToString(), questionOptions2_Chk, GetTotalWeightage(QuestionType.radio,questionOptions2_Chk)),
                 GetQuestion(4, "Are you doing MAT-filing?", QuestionType.radio.ToString(), questionOptions3,GetTotalWeightage(QuestionType.radio,questionOptions3)),
                 GetQuestion(5, "Are you doing e-filing?", QuestionType.radio.ToString(), questionOptions4,GetTotalWeightage(QuestionType.radio,questionOptions4)),
-                GetQuestion(6, "Are you paying for preparer or buyied any software?", QuestionType.radio.ToString(), questionOptions5,GetTotalWeightage(QuestionType.radio,questionOptions5)),
+                GetQuestion(6, "Are you paying for preparer or using any software?", QuestionType.radio.ToString(), questionOptions5,GetTotalWeightage(QuestionType.radio,questionOptions5)),
                 GetQuestion(7, "Do you integrate filing raw data with the system using any tool?", QuestionType.radio.ToString(), questionOptions6,GetTotalWeightage(QuestionType.radio,questionOptions6)),
                 GetQuestion(8, "Does it come under Home-ruled state?", QuestionType.radio.ToString(), questionOptions7,GetTotalWeightage(QuestionType.radio,questionOptions7)),
-                GetQuestion(9, "In which city are you doing bussiness?", QuestionType.radio.ToString(), questionOptions8,GetTotalWeightage(QuestionType.radio,questionOptions8)),
+                GetQuestion(9, "In which city are you doing bussiness?", QuestionType.checkbox.ToString(), questionOptions8,GetTotalWeightage(QuestionType.radio,questionOptions8)),
                 GetQuestion(10, "Are you doing sales tax nexus filing in your bussiness?", QuestionType.radio.ToString(), questionOptions9,GetTotalWeightage(QuestionType.radio,questionOptions9)),
                 GetQuestion(11, "Have you done any transactions in Sales tax holidays also?", QuestionType.radio.ToString(), questionOptions10,GetTotalWeightage(QuestionType.radio,questionOptions10)),
                 GetQuestion(12, "Have you been audited?", QuestionType.radio.ToString(), questionOptions11,GetTotalWeightage(QuestionType.radio,questionOptions11))

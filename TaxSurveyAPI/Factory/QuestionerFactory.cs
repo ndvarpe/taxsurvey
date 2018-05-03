@@ -12,21 +12,21 @@ namespace TaxSurveyAPI.Factory
         {
             List<QuestionOption> questionOptions1 = new List<QuestionOption>
             {
-                GetQuestionOptions("0 to 5", 1, false,10),
+                GetQuestionOptions("0 to 5", 1, false,5),
                 GetQuestionOptions("5 to 15", 2, false,10),
-                GetQuestionOptions("15 to 30", 3, false,10),
-                GetQuestionOptions("30 to 50", 4, false,10)
+                GetQuestionOptions("15 to 30", 3, false,15),
+                GetQuestionOptions("30 to 50", 4, false,20)
             };
             List<QuestionOption> questionOptions2 = new List<QuestionOption>
             {
                 GetQuestionOptions("Yes", 1, false,10),
-                GetQuestionOptions("No", 2, false,10)
+                GetQuestionOptions("No", 2, false,0)
             };
 
             List<Question> questionslist = new List<Question>
             {
                 GetQuestion(1, "How many states are you obligated to collect sales tax in?", QuestionType.checkbox.ToString(), questionOptions1, GetTotalWeightage(QuestionType.checkbox,questionOptions1)),
-                GetQuestion(2, "Do you collect sales tax in Louisiana?", QuestionType.radio.ToString(), questionOptions2, GetTotalWeightage(QuestionType.radio,questionOptions2)),
+                GetQuestion(2, "Do you collect sales tax in Home-Ruled State like Louisiana?", QuestionType.radio.ToString(), questionOptions2, GetTotalWeightage(QuestionType.radio,questionOptions2)),
                 GetQuestion(3, "Do you sell products online (via the internet)?", QuestionType.radio.ToString(), questionOptions2,GetTotalWeightage(QuestionType.radio,questionOptions2))
             };
 

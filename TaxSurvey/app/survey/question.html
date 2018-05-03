@@ -1,8 +1,8 @@
 ﻿<label>{{question.QuestionText}}</label>
 <div ng-if="question.Type == 'radio'" class="form-group">
-    <div ng-repeat="option in question.Options" class="radio">
-        <label>
-            <input type="radio" name="radio" ng-model="question.SelectedOption" ng-value="option.Value">
+    <div ng-repeat="option in question.Options" class="radio radio-danger">
+        <input type="radio" name="radio" id="radio_{{$index}}" ng-model="question.SelectedOption" ng-value="option.Value">
+        <label for="radio_{{$index}}">
             {{option.Text}}
         </label>
     </div>
@@ -11,12 +11,18 @@
     <input type="text" class="form-control" name="name" ng-model="question.Text">
 </div>
 <div ng-if="question.Type == 'checkbox'" class="form-group">
-    <div ng-repeat="option in question.Options" class="radio">
+    <div ng-repeat="option in question.Options" class="checkbox checkbox-danger">
+        <input id="chk_{{$index}}" type="checkbox" ng-model="option.IsSelected">
+        <label for="chk_{{$index}}">
+            {{option.Text}}
+        </label>
+    </div>
+    <!--<div ng-repeat="option in question.Options" class="radio">
         <label>
             <input type="checkbox" id="chk_{{$index}}" ng-model="option.IsSelected">
             {{option.Text}}
         </label>
-    </div>
+    </div>-->
 </div>
 
 <div class="form-group row">
@@ -25,5 +31,8 @@
             Next <span class="glyphicon glyphicon-circle-arrow-right"></span>
         </a>
         <a ng-if="question.QuestionId == totalQuestions.length" ng-click="submitAnswer()" class="btn btn-block btn-danger">Submit</a>
+        <a ng-if="question.QuestionId <= totalQuestions.length && question.QuestionId != 1" ng-click="previousQuestion()" class="btn btn-block btn-info">
+            <span class="glyphicon glyphicon-circle-arrow-left"></span> Previous
+        </a>
     </div>
 </div>

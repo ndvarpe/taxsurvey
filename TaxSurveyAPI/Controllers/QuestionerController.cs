@@ -92,9 +92,35 @@ namespace TaxSurveyAPI.Controllers
 
                 totalWeightage = ((compliance + efficiency + Psychological) / 3);
 
+                var notMatFilingDone = questions.Any(q => q.QuestionId == 4) ? (questions.FirstOrDefault(q => q.QuestionId == 4).IsAnswered &&
+                                    questions.FirstOrDefault(q => q.QuestionId == 4).SelectedOption == 2) : false;
+                var matFilingComment = string.Empty;
+                var homeRuledComment = string.Empty;
+                var rdsRuledComment = string.Empty;
+                var comments = new List<string>();
+                if (notMatFilingDone)
+                {
+                    matFilingComment = "Albama state provides consolidated MAT filing instead of filing multiple forms, Please file your returns using MAT!!!";
+                    comments.Add(matFilingComment);
+                }
+                var homeRuled = questions.FirstOrDefault(q => q.QuestionId == 9 && q.IsAnswered).Options.Where(o => (o.Value == 1 || o.Value == 2 || o.Value == 5) && o.IsSelected);
+
+                var rdsRuled = questions.FirstOrDefault(q => q.QuestionId == 9 && q.IsAnswered).Options.Where(o => (o.Value == 3 || o.Value == 4) && o.IsSelected);
+                if (homeRuled.Any())
+                {
+                    homeRuledComment = string.Format("For {0} you have to submit respective home ruled forms as well as state forms for tax filing", string.Join(", ", homeRuled.Select(o => o.Text).ToList()));
+                    comments.Add(homeRuledComment);
+                }
+                if (rdsRuled.Any())
+                {
+                    rdsRuledComment = string.Format("For {0} you have to submit respective RDS forms as well as state forms for tax filing", string.Join(", ", rdsRuled.Select(o => o.Text).ToList()));
+                    comments.Add(rdsRuledComment);
+                }
                 //decimal weightagePercent = Math.Round((selectedWeightage / totalWeightage) * 100, 2);
                 var message = Request.CreateResponse(HttpStatusCode.OK, new
                 {
+                    comments = comments,
+                    totalWeightage  = Math.Round(totalWeightage, 2),
                     barChart = new
                     {
                         Compliance = Math.Round(compliance,2),

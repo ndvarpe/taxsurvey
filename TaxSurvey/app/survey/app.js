@@ -55,7 +55,7 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
             url: '/surveyChart',
             
             templateUrl: 'app/survey/surveyChart.html',
-            controller: 'surveyChartController as ctrl',
+            controller: 'surveyChartController',
             params: { data: null }
         })
 

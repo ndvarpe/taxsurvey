@@ -9,8 +9,20 @@
         height: 500px;
     }
 </style>
-<div class="col-lg-12">
+<div class="row">
+    <h3>Overall Risk Factor</h3>
+    <div class="progress" style="width:50%">
+        <div ng-class="{'progress-bar progress-bar-success': totalWeightage < 20,  'progress-bar progress-bar-warning': totalWeightage > 20 && totalWeightage < 30, 'progress-bar progress-bar-danger': totalWeightage > 30}" role="progressbar" aria-valuenow="50"
+             aria-valuemin="0" aria-valuemax="100" style="width:{{totalWeightage}}%">
+            {{totalWeightage + '%'}}
+        </div>
+    </div>
     <h3>Risk Factor Chart</h3>
     <div class="col-lg-6" id="columnChart"></div>
     <div  class="col-lg-6" id="pieChart"></div>
+</div>
+<div style="margin-top:10px;">
+    <div class="alert alert-warning" ng-repeat="comment in comments">
+        <strong>{{comment}}</strong>
+    </div>
 </div>

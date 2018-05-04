@@ -30,12 +30,12 @@ namespace TaxSurveyAPI.Factory
             List<QuestionOption> questionOptions3 = new List<QuestionOption>
             {
                 GetQuestionOptions("Yes", 1, false,6, GetFactorWeightage(0,0,0,0,0,0,0)),
-                GetQuestionOptions("No", 2, false,5, GetFactorWeightage(30,20, 10, 20, 15, 25))
+                GetQuestionOptions("No", 2, false,5, GetFactorWeightage(70,80, 90,80,70,50))
             };
             List<QuestionOption> questionOptions4 = new List<QuestionOption>
             {
                 GetQuestionOptions("Yes", 1, false,6, GetFactorWeightage(20,20,25)),
-                GetQuestionOptions("No", 2, false,6, GetFactorWeightage(30,20, 10, 20, 15, 25))
+                GetQuestionOptions("No", 2, false,6, GetFactorWeightage(70,80, 90,80,70))
             };
             List<QuestionOption> questionOptions5 = new List<QuestionOption>
             {
@@ -74,7 +74,7 @@ namespace TaxSurveyAPI.Factory
             List<QuestionOption> questionOptions11 = new List<QuestionOption>
             {
                 GetQuestionOptions("Yes", 1, false,-1, GetFactorWeightage(20,20, 23,26,20)),
-                GetQuestionOptions("No", 2, false,-1, GetFactorWeightage(50,60, 43,26,30))
+                GetQuestionOptions("No", 2, false,-1, GetFactorWeightage(70,80, 90,80,70))
             };
 
             List<Question> questionslist = new List<Question>

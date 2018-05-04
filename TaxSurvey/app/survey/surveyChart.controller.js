@@ -6,9 +6,9 @@
 		.controller('surveyChartController', ['$scope', 'questionsFactory', '$state', '$stateParams', surveyChartController]);
 
     function surveyChartController($scope, questionsFactory, $state, $stateParams) {
-        var ctrl = this;
         var data = $stateParams.data;
-        
+        $scope.comments = data ? data.comments : [];
+        $scope.totalWeightage = data ? data.totalWeightage : 100;
         var dataProvider = [];
 
         $('#pieChart').hide();
